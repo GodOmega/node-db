@@ -16,9 +16,11 @@ const options = {
   logging: config.isProd ? false : console.log,
 }
 
-if (config.isProd) {
-  options.ssl = {
-    rejectUnauthorized: false
+if (config.isProd && config.dbType === 'postgres') {
+  options.dialectOptions = {
+    ssl: {
+      rejectUnauthorized: false
+    }
   }
 }
 
