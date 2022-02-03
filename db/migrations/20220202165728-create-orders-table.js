@@ -1,6 +1,7 @@
 'use strict';
 
-const { orderSchema, ORDER_TABLE } = require('../models/orders.model');
+const { ORDER_TABLE } = require('../models/orders.model');
+const { DataTypes, Sequelize } = require('sequelize')
 
 module.exports = {
   async up (queryInterface) {
